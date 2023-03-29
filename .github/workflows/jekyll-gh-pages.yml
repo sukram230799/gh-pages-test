@@ -35,9 +35,10 @@ jobs:
       - name: Install dependencies
         run: |
           pip install nbconvert
-      - name: Build the book
+      - name: Build the book to markdown
         run: |
-          jupyter nbconvert --to markdown *.ipynb --output-dir='./pages/_includes/notebooks'
+          jupyter nbconvert --to markdown *.ipynb --output-dir='./pages/_includes/notebooks' && \
+          jupyter nbconvert --to html *.ipynb --output-dir='./pages/notebooks'
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Build with Jekyll
