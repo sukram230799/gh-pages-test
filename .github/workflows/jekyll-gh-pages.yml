@@ -35,7 +35,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install nbconvert
-      - name: Build the book to markdown
+      - name: Build the book
         run: |
           jupyter nbconvert --to markdown *.ipynb --output-dir='./pages/_includes/notebooks' && \
           jupyter nbconvert --to html *.ipynb --output-dir='./pages/notebooks'
